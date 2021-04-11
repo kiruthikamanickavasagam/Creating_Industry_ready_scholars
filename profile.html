@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Collabrative Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(b3.png); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+}
+  
+  input[type=text], input[type=password], select{
+  width: 85%;
+  height: 100px;
+  padding: 15px;
+  margin: 8px 0 ;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #DCDCDC;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+  .registerbtn {
+  background-color: black;
+  position: absolute;
+  left: 5%;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  background-color: grey;
+  opacity: 1;
+}
+
+
+.heading {
+  font-size: 18px;
+  margin-right: 25px;
+}
+
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+
+.edit{
+  height:30%;
+  width: 20%;
+}
+
+.col-sm-4{
+   width: 50%;
+}
+.col-sm-8{
+   width: 50%;
+}
+td{
+  text-align: left;
+  }
+th{
+  text-align: center;
+}
+
+td, th {
+ 
+  padding: 5px;
+}
+
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 100%;
+  width: 100%;
+}
+
+/* The actual popup */
+ .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+a:link {
+
+font-size: 17px;
+
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<!--<div >
+   <img src="main1.jfif" class="img1">
+  
+</div>-->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Kavitha</a>
+      <a class="navbar-brand" href="#">211417104120</a>
+      <a class="navbar-brand" href="#">Final Year</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="main.html">Courses</a></li>
+        <li><a href="skills.html">Add Skills</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="placement.html">Placement</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2><b>Profile</b></h2>
+
+
+      <label for="name" class="heading"><b>Edit Profile</b></label>
+      <a href="edit.html"><img class="edit" src="edit.jfif"></a><br>
+      
+      <label for="name" class="heading"><b>Edit Login Credentials</b></label>
+    <a href="edit.html"><img class="edit" src="edit.jfif"></a><br><br>
+
+    <label for="name" class="heading"><b>Download Resume</b></label>
+    
+    <div class="popup" onclick="myFunction()">
+      <img class="edit" src="download.png"><br>
+    <span class="popuptext" id="myPopup"> Done</span>
+   </div>
+
+    
+               
+
+      <span class="heading"><b> Rating</b></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span>
+      <br><br>
+      <label for="name" class="heading"><b>Write A Review</b></label><br>
+    <input type="text" name="name" id="name" required/><br>
+
+
+    <br> <div class="popup" onclick="myFunction()">
+    <button class="registerbtn" style="width: auto;">Submit</button>
+        <span class="popuptext" id="myPopup">Review Submitted Successfully</span>
+</div>
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+
+    </div>
+    <div class="col-sm-8">
+      <h2><b>Resume Templete</b></h2>
+      <table style="width:50%">
+       
+        <tr>
+          <td> Name : </td>
+           <td> Address : </td>
+        </tr>
+         <tr>
+          <td> Date of Birth : </td>
+           <td> Phone NUmber : </td>
+        </tr>
+         <tr>
+          <td> Email : </td>
+          <td> Linked In I'd : </td>
+        </tr>
+        
+         <tr>
+          <td><hr  ="100%"  style="border:3px solid black "></td>
+        </tr>
+        <tr>
+          <th>X-Details</th>
+          <th>XII-Details</th>
+        </tr>
+        <tr>
+          <td>X-School </td>
+          <td>XII-School</td>
+        </tr>
+        <tr>
+          <td>X-Score</td>
+          <td>XII-Score </td>
+        </tr>
+        <tr>
+          <td>Year Of Passing Out </td>
+          <td>Year Of Passing Out </td>
+        </tr>
+
+        <tr>
+          <th>Skills</th>
+        </tr>
+        <tr>
+          <td>html </td>
+          <td>css</td>
+        </tr>
+        <tr>
+          <td>C </td>
+          <td>Java</td>
+        </tr>
+        <tr>
+          <th>Projects </th>
+        </tr>
+        <tr>
+          <th>Acheivements </th>
+        </tr>
+        
+        
+      </table>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
